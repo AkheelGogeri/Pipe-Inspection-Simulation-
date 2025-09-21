@@ -1,0 +1,14 @@
+# CoppeliaSim
+*.ttt
+*.bak
+*.log
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Results
+results/*
+!results/.gitkeep
