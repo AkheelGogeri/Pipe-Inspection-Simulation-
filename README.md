@@ -1,4 +1,4 @@
-# PipeBot Crawler — CoppeliaSim + Lua (No ROS, No Python)
+# PipeBot Crawler — CoppeliaSim + Lua 
 
 Badges: [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
