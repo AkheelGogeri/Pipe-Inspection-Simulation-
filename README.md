@@ -2,7 +2,7 @@ Pipe Inspection Simulation — Wall-Press Crawler Robot
 
 ## Demo
 
-[![PipeBot Crawler Demo][(https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID](https://youtu.be/j6D__1KxbAg))
+[![PipeBot Crawler Demo]([https://www.youtube.com/watch?v=j6D__1KxbAg])
 
 
 
