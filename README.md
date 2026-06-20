@@ -1,94 +1,69 @@
-# PipeBot Crawler — CoppeliaSim + Lua 
+Pipe Inspection Simulation — Wall-Press Crawler Robot
 
-Badges: [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+## Demo
 
-A **simulation-only** project for an **industrial pipe inspection crawler** built entirely in **CoppeliaSim with Lua scripts**. The focus is gait control, wall-press contact, scene hierarchy, and quantitative evaluation of performance.
+[![PipeBot Crawler Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
 
-## What’s in this repo
-- `simulation/scenes/` — your `.ttt` CoppeliaSim scenes (tracked with Git LFS)
-- `simulation/scripts/` — Lua controller scripts for gait control
-- `docs/` — diagrams and notes that support your dissertation
-- `results/` — screenshots, short gifs, and logs from runs
-- CI — optional GitHub Action to lint Lua with `luacheck`
 
-## Quick start (CoppeliaSim)
-1. Open **CoppeliaSim**.
-2. Load your scene: `File → Open scene…` and pick a `.ttt` file from `simulation/scenes/`.
-3. In the **Scene Hierarchy**, select the model root. Ensure Lua script is attached or open `simulation/scripts/crawler_control.lua` and copy it into your model script.
-4. Press **Play** to run. Tune the parameters at the top of the Lua file.
 
-## Folder structure
-```
-pipebot-coppeliasim/
-├─ simulation/
-│  ├─ scenes/            # .ttt files (use Git LFS)
-│  └─ scripts/           # Lua control scripts
-├─ docs/
-│  ├─ figures/           # PNG/SVG of timing + gait
-│  └─ report_notes.md    # Design rationale and results notes
-├─ results/              # Logs, screenshots, gifs
-├─ .github/workflows/    # Lua lint CI (optional)
-├─ .luacheckrc           # Lint config for Lua
-├─ .gitattributes        # LFS rules for .ttt and media
-├─ .gitignore
-├─ LICENSE
-└─ README.md
-```
+A simulation-only project of an autonomous wall-press crawler robot designed for industrial pipe inspection. Built in CoppeliaSim (formerly V-REP) using Lua scripting, the robot uses a wall-pressing locomotion mechanism to navigate inside pipes without falling, mimicking real-world inspection hardware used in oil, gas, and infrastructure industries.
 
-## Gait and timing diagrams (Mermaid)
-```mermaid
-gantt
-    dateFormat  X
-    title Four-Phase Wall-Press Gait
-    section Cycle
-    Extend Opposing       :a1, 0, 1
-    Rear Hold + Front Retr:after a1, 1
-    Front Ext + Rear Retr :2, 1
-    Reset Pose            :3, 1
-```
 
-## Performance targets (as used in the dissertation)
-- Actuator force: **5–15 N**
-- Displacement per cycle: **2–5 mm**
-- Control loop: update commands at a fixed frequency (e.g., 20–50 Hz)
+Overview
 
----
+Industrial pipe inspection is a high-risk, time-consuming task typically requiring manual intervention or expensive specialist equipment. This project simulates a crawler robot that can autonomously traverse the interior of a pipe by pressing against the pipe walls for traction and stability — a common mechanism in real inspection robots.
 
-# Absolute beginner guide to GitHub
 
-### Option A: Easiest — upload via website
-1. Go to [github.com](https://github.com) and create an account.
-2. Click **New** repository → Name it `pipebot-coppeliasim` → click **Create repository**.
-3. Click **Add file → Upload files**.
-4. Drag-drop the **contents** of this folder (or upload the zip and let GitHub extract is NOT supported; instead upload the unzipped files).
-5. Scroll down and click **Commit changes**.
+Features
 
-### Option B: GitHub Desktop app (no terminal)
-1. Install **GitHub Desktop** (Windows/Mac).
-2. **File → New repository** → name it `pipebot-coppeliasim`.
-3. Open the repo folder on your computer and copy all files from this zip into it.
-4. Back in GitHub Desktop → **Commit to main** → **Publish repository**.
 
-### Option C: Command line (if you want)
-```bash
-git init
-git add .
-git commit -m "feat: initial CoppeliaSim + Lua repo"
-git branch -M main
-git remote add origin git@github.com:YOUR-USERNAME/pipebot-coppeliasim.git
-git push -u origin main
-```
+Wall-press locomotion mechanism simulated in CoppeliaSim
+Lua scripting for gait control and motion sequencing
+Timing diagrams for synchronised leg/wheel actuation
+Scene hierarchy structured for modular component control
+Stable traversal through straight pipe sections without slipping or falling
 
-> Tip: For large `.ttt` scenes and media, enable Git LFS once in your system: https://git-lfs.com/
-> After installing, run in this repo: `git lfs install`
 
----
 
-## Where to put your files
-- Put your **scene files** in `simulation/scenes/`
-- Put your **Lua scripts** in `simulation/scripts/`
-- Export **screenshots/gifs** to `results/`
-- Save **figures** to `docs/figures/` and reference them in your report
+Tech Stack
 
-## License
-MIT — see `LICENSE`.
+ComponentTechnologySimulation EngineCoppeliaSim (V-REP)ScriptingLuaRobot MechanismWall-press crawlerDomainIndustrial robotics, pipe inspection
+
+
+How It Works
+
+
+The robot body is designed to press outward against the pipe walls using spring-loaded or actuated arms
+Lua scripts control the timing and sequence of actuation to produce forward locomotion
+CoppeliaSim physics engine simulates friction, contact forces, and weight distribution
+Gait timing is tuned to maintain stable wall contact throughout traversal
+
+
+
+Project Structure
+
+Pipe-Inspection-Simulation/
+├── scene/          # CoppeliaSim scene files (.ttt)
+├── scripts/        # Lua control scripts
+└── docs/           # Timing diagrams and design notes
+
+
+Use Case & Relevance
+
+Wall-press crawlers are used in:
+
+
+Oil and gas pipeline inspection
+Water and sewage infrastructure maintenance
+Nuclear facility pipe monitoring
+Any environment where human access is hazardous or impossible
+
+
+This simulation demonstrates the core locomotion principles applicable to real-world deployment.
+
+
+Author
+
+Akheel R Gogeri
+B.E. Automation & Robotics — KLE Technological University
+MSc Artificial Intelligence with Data Science — University of Liverpool
